@@ -51,7 +51,7 @@ Here's an example of how you can interact with the file system:
 $ create example.txt
 File created: example.txt
 
-$ write example.txt "Hello, world!"
+$ write example.txt Hello, world!
 Content written to example.txt
 
 $ read example.txt
