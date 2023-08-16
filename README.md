@@ -8,6 +8,7 @@ This is a basic command-line file system implementation that allows users to cre
 - [Usage](#usage)
 - [Commands](#commands)
 - [Example](#example)
+- [Known Issues](#known-issues)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -64,6 +65,9 @@ Files in the file system:
 $ delete example.txt
 File deleted: example.txt
 ```
+
+## Known Issues
+- No input validation, program will work with correct commands with full arguments.
 
 ## Contributing
 
