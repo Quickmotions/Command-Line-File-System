@@ -1,12 +1,11 @@
 # filesystem.py -- Fergus Haak -- 05/09/2023
 from datetime import datetime
-from pprint import pprint
-
 from directory import Directory
+
 
 class FileSystem:
     def __init__(self):
-        self.wrk_dir = Directory()
+        self.wrk_dir = Directory(name="/", parent=None)
         self.root = self.wrk_dir
         self.date = datetime.now()
 

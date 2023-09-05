@@ -2,9 +2,10 @@
 from datetime import datetime
 from file import File
 
+
 class Directory:
 
-    def __init__(self, name, parent: None):
+    def __init__(self, name: str, parent):
         self.name: str = name
         self.files: list[File] = []
         self.subdir: list[Directory] = []
@@ -14,7 +15,7 @@ class Directory:
     def cr_subdir(self, name):
         self.subdir.append(Directory(name))
 
-    def dl_subdir(self):
+    def dl_subdir(self, name):
         ...
 
     def cr_file(self, name, content):
@@ -36,4 +37,3 @@ class Directory:
         for subdir in self.subdir:
             if subdir.name == name:
                 return subdir
-
