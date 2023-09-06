@@ -19,6 +19,7 @@ class File:
 
     def write(self, content) -> None:
         self.content = content
+        self.size += len(str(content))
 
-    def __sizeof__(self) -> int:
+    def sizeof(self) -> int:
         return self.size

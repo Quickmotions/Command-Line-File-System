@@ -1,5 +1,4 @@
 # tests/test_filesystem.py -- Fergus Haak -- 05/09/2023
-
 import unittest
 from filesystem import FileSystem  # Import your FileSystem class
 
@@ -48,6 +47,35 @@ class TestFileSystem(unittest.TestCase):
         self.fs.cr_file(file_name, fmt, content)
         self.fs.del_file(file_name)
         self.assertNotIn(file_name, self.fs.dir())
+
+    def test_changing_directories(self):
+        # Test changing in and out of directories and sub-directories
+        directory = "main"
+        sub_directory = "sub"
+        self.assertEqual(str(self.fs.wrk_dir), "/")
+        self.fs.cr_dir(directory)
+        self.fs.mv_dir("main")
+        self.assertEqual(str(self.fs.wrk_dir), "main")
+        self.fs.cr_dir(sub_directory)
+        self.assertEqual(str(self.fs.wrk_dir), "main")
+        self.fs.mv_bk()
+        self.assertEqual(str(self.fs.wrk_dir), "/")
+        self.assertEqual(self.fs.dir(), ["main"])
+        self.fs.mv_dir("main")
+        self.assertEqual(self.fs.dir(), ["sub"])
+        self.fs.mv_dir("sub")
+        self.assertEqual(self.fs.dir(), [])
+
+    def test_fs_sizeof(self):
+        file_name = "file1.txt"
+        content = "Hi this is content of length 33"
+        file_name_2 = "file2.txt"
+        content_2 = "hi"
+        file_name_3 = "file3.txt"
+        self.fs.cr_file(file_name, "txt", content)
+        self.fs.cr_file(file_name_2, "txt", content_2)
+        self.fs.cr_file(file_name_3, "txt")
+        self.assertEqual(self.fs.sizeof(), 33)
 
     # Add more test cases as needed
 
