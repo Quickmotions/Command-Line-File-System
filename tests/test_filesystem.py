@@ -16,35 +16,38 @@ class TestFileSystem(unittest.TestCase):
 
     def test_initial_directory_structure(self):
         # Test that the file system starts with a root directory
-        self.assertEqual(self.fs.current_directory, "/")
+        self.assertEqual(str(self.fs.wrk_dir), "/")
 
     def test_create_directory(self):
         # Test creating a new directory
         directory_name = "new_directory"
-        self.fs.create_directory(directory_name)
-        self.assertIn(directory_name, self.fs.list_directory())
+        self.fs.cr_dir(directory_name)
+        self.assertIn(directory_name, self.fs.dir())
 
     def test_create_file(self):
         # Test creating a new file
         file_name = "new_file.txt"
         content = "This is a test file."
-        self.fs.create_file(file_name, content)
-        self.assertIn(file_name, self.fs.list_directory())
-        self.assertEqual(self.fs.read_file(file_name), content)
+        fmt = "txt"
+        self.fs.cr_file(file_name, fmt, content)
+        self.assertIn(file_name, self.fs.dir())
+        self.assertEqual(self.fs.rd_file(file_name), content)
 
     def test_delete_directory(self):
         # Test deleting a directory
         directory_name = "to_be_deleted"
-        self.fs.create_directory(directory_name)
-        self.fs.delete_directory(directory_name)
-        self.assertNotIn(directory_name, self.fs.list_directory())
+        self.fs.cr_dir(directory_name)
+        self.fs.del_dir(directory_name)
+        self.assertNotIn(directory_name, self.fs.dir())
 
     def test_delete_file(self):
         # Test deleting a file
         file_name = "to_be_deleted.txt"
-        self.fs.create_file(file_name, "Delete me!")
-        self.fs.delete_file(file_name)
-        self.assertNotIn(file_name, self.fs.list_directory())
+        content = "Delete me!"
+        fmt = "txt"
+        self.fs.cr_file(file_name, fmt, content)
+        self.fs.del_file(file_name)
+        self.assertNotIn(file_name, self.fs.dir())
 
     # Add more test cases as needed
 

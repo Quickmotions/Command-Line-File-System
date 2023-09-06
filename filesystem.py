@@ -17,17 +17,21 @@ class FileSystem:
         """deletes a directory in working directory"""
         self.wrk_dir.dl_subdir(name)
 
-    def cr_file(self, name, content: str = None):
+    def cr_file(self, name, format: str, content: str = None, ):
         """creates a file"""
-        self.wrk_dir.cr_file(name, content)
+        self.wrk_dir.cr_file(name, format, content)
 
     def del_file(self, name):
         """deletes a file"""
         self.wrk_dir.dl_file(name)
 
+    def rd_file(self, name) -> str:
+        """reads a file in working directory"""
+        return self.wrk_dir.rd(name)
+
     def dir(self) -> list:
         """list working directory"""
-        return list(self.wrk_dir.dir())
+        return list(self.wrk_dir.ls())
 
     def ch_dir(self, name):
         """change working directory"""
