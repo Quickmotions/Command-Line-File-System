@@ -3,6 +3,7 @@ from datetime import datetime
 from file import File
 from errorhandler import ErrorHandler
 
+
 class Directory:
 
     def __init__(self, name, parent):
@@ -30,12 +31,11 @@ class Directory:
                 return None
         self.error("004")
 
-    def cr_file(self, name, format, content) -> None:
+    def cr_file(self, name, file_format, content) -> None:
         if name in list(self.ls()):
             self.error("006")
             return None
-
-        new_file = File(name, format)
+        new_file = File(name, file_format)
         if content: new_file.write(content)
         self.files.append(new_file)
 
@@ -50,7 +50,8 @@ class Directory:
         for subdir in self.subdir:
             yield subdir.name
         for file in self.files:
-            yield file.name
+            if not file.hidden:
+                yield file.name
 
     def get_subdir(self, name) -> object:
         for subdir in self.subdir:
