@@ -7,3 +7,9 @@ class User:
         self.name: str = name
         self.date: datetime = datetime.now()
         self.priv: int = priv
+
+    def user_interface_input(self):
+        ...
+
+    def process_command(self, user_input):
+        pass

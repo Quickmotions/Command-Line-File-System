@@ -41,7 +41,7 @@ class ErrorHandler:
 
         # Log the error
         self.logger.error(error_message)
-
+        print(error_message)
         return Exception(error_message)
 
     @staticmethod
@@ -61,5 +61,5 @@ class ErrorHandler:
 
         # Log the exception
         logging.error(error_message)
-
+        print(error_message)
         return Exception(error_message)

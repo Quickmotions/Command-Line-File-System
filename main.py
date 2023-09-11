@@ -7,13 +7,13 @@ def main():
     file_system = FileSystem()
 
     # Create an instance of the User class for user interactions
-    user_interface = User(file_system)
+    user_interface = User("root")
 
     print("Welcome to My Command-Line File System!")
 
     while True:
         # Display the current directory
-        print(f"Current Directory: {file_system.current_directory}")
+        print(f"Current Directory: {file_system.wrk_dir}")
 
         # Get user input
         user_input = input("Enter a command (type 'help' for a list of commands): ").strip()

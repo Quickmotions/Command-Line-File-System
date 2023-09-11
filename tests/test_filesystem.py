@@ -49,7 +49,7 @@ class TestFileSystem(unittest.TestCase):
         self.assertNotIn(file_name, self.fs.dir())
 
     def test_changing_directories(self):
-        # Test changing in and out of directories and sub-directories
+        # Test changing in and out of directories and subdirectories
         directory = "main"
         sub_directory = "sub"
         self.assertEqual(str(self.fs.wrk_dir), "/")
