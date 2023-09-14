@@ -1,6 +1,6 @@
 # tests/test_filesystem.py -- Fergus Haak -- 05/09/2023
 import unittest
-from filesystem import FileSystem  # Import your FileSystem class
+from filesystem import FileSystem
 
 
 class TestFileSystem(unittest.TestCase):
@@ -9,7 +9,7 @@ class TestFileSystem(unittest.TestCase):
         # Set up any necessary resources or create a new instance of your FileSystem class
         self.fs = FileSystem()
 
-    def tearDown(self):
+    def tear_down(self):
         # Clean up any resources if needed
         pass
 
