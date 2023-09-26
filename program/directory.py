@@ -1,7 +1,7 @@
 # directory.py -- Fergus Haak -- 05/09/2023
 from datetime import datetime
-from file import File
-from errorhandler import ErrorHandler
+from program.file import File
+from program.errorhandler import ErrorHandler
 
 
 class Directory:

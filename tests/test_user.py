@@ -1,6 +1,6 @@
 # tests/test_user.py -- Fergus Haak -- 14/09/2023
 import unittest
-from user import User
+from program.user import User
 
 
 class TestFileSystem(unittest.TestCase):

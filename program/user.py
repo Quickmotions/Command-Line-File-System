@@ -1,7 +1,7 @@
 # user.py -- Fergus Haak -- 05/09/2023
 from datetime import datetime
 from commands import HelpCommand
-from errorhandler import ErrorHandler
+from program.errorhandler import ErrorHandler
 
 class User:
     def __init__(self, name: str, priv: int = 2):

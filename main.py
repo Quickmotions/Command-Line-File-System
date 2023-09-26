@@ -1,6 +1,6 @@
 # main.py -- Fergus Haak -- 05/09/2023
-from filesystem import FileSystem  # Import your FileSystem class
-from user import User
+from program.filesystem import FileSystem  # Import your FileSystem class
+from program.user import User
 
 def main():
     # Create an instance of the FileSystem class

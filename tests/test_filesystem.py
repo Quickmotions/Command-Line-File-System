@@ -1,6 +1,6 @@
 # tests/test_filesystem.py -- Fergus Haak -- 05/09/2023
 import unittest
-from filesystem import FileSystem
+from program.filesystem import FileSystem
 
 
 class TestFileSystem(unittest.TestCase):
