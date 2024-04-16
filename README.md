@@ -7,6 +7,7 @@ This is a basic command-line file system implementation that allows users to cre
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Commands](#commands)
+- [Tests](#unit-tests)
 - [Example](#example)
 - [Known Issues](#known-issues)
 - [Contributing](#contributing)
@@ -42,6 +43,12 @@ To use the file system, follow these steps:
 - `read <filename>`: Displays the content of the specified file.
 - `delete <filename>`: Deletes the specified file.
 - `list`: Lists all files in the file system.
+
+## Unit Tests 
+
+Heres how to call the unit tests
+- `python3 -m tests.test_filesystem`
+- `python3 -m tests.test_user`
 
 ## Example
 

@@ -1,7 +1,7 @@
 # filesystem.py -- Fergus Haak -- 05/09/2023
 from datetime import datetime
-from directory import Directory
-from errorhandler import ErrorHandler
+from program.directory import Directory
+from program.errorhandler import ErrorHandler
 
 class FileSystem:
     def __init__(self):
